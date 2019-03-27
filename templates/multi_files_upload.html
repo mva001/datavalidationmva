@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<div class="multi_upload_index">
+		<h2 class="text-muted">UPLOADED FILES</h2>
+
+			<p>Bellow the overview report (issues.txt) and the screened file with data to upload and detailed issues (report.xlsx): .</p>
+			<ul>
+				{% for file in filenames %}
+					<li><a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a></li>
+				{% endfor %}
+			</ul>
+	<form class = "button" action="/refresh/" method="post">
+  	<button class="mybutton" name="forwardBtn" type="submit">Refresh</button>
+	</form>
+	</div>
+	<div class="multi_files_upload"> 
+		<h2 class="text-muted">REPORT OVERVIEW</h2>
+		<hr/>    
+		<pre>
+			{{ text }}
+		</pre>
+	</div>
+
+ {% endblock %}  

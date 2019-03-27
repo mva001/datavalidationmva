@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>SELECT COMPANY</h2>
+  <font size="1"><h1>(Choose the related company/project, after that click on 'FILES TO UPLOAD' button.)</h1></font>
+  <form class="button" method="POST">
+    <input name="company">
+    <input class= "mybutton" type="submit" value= "Load Company">
+  </form>
+   <!--<a href="{{ url_for('index') }}"><font size="1" color="#004fab" face="verdana"> <h1>FILES TO UPLOAD</h1></a></font>
+   -->
+    </form>
+    <form class="button" action="/files" method="post">
+      <button class="mybutton" type="submit">Files to Upload</button>
+    </form>  
+    
+  <div class="multi_upload_index">
+  <h2>Instructions for the upload templates -  <b>CI's</b> and/or <b>Sites</b>:</h2>
+      <a href = "/return-file/" target ="blank"><button class="mybutton">Download Templates</button></a>
+  <hr/>
+    <ul>  
+      <li><p> During onboarding/deployment the Sites or CI data has to be analyzed and defined in the CMDB data model first;</li>
+      <li><p> Based on the CMDB data model, the Sites or CI information can be prepared for bulk upload in these templates</li>
+      <li><p> The fields marked green are mandatory; in some cases upload in ITSM will fail when these fields are left blank; in other cases it will impact ticket creation afterwards.</li>
+      <li><p> The fields, white/unmarked, must be filled based on the rules of the CMDB data model. When blank, the rules may vary per project.</li>
+    </ul>
+  </div>
+
+  <div class="image_dim">
+      <!-- image -->
+    <center>
+      <img src='/static/images/NOKIA-Logo-Blue.jpg' style="width: auto; height: auto;max-width: 1000px;max-height: 1000px">
+    </center>
+  </div>
+{% endblock %}
